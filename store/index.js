@@ -5,8 +5,11 @@ export const state = () => ({
 })
 
 export const getters = {
-  isLoggedIn: (state) => {
+  isLoggedIn: state => {
     return state.status;
+  },
+  mail: state => {
+    return state.status ? state.mail : false;
   }
 }
 

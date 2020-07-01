@@ -36,12 +36,16 @@
 </template>
 
 <script>
+import Header from '~/components/TheHeader.vue';
 export default {
   data() {
     return {
       username: '',
       password: '',
     };
+  },
+  components: {
+    Header,
   },
 };
 </script>
