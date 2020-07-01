@@ -1,11 +1,16 @@
-export default async function ({ app, route, store, redirect }) {
+export default function ({ app, route, store, redirect }) {
   console.log(app)
-  await app.$fireAuth.onAuthStateChanged(user => {
+  app.$fireAuth.onAuthStateChanged(user => {
     if (user) {
-      store.commit('setUser', user)
-      console.log('ログイン済みです')
+      store.commit('setUser', user);
+      console.log('ログインしています');
+      if (route.path === '/login' || route.path === '/signup') {
+        return redirect('/')
+      }
     } else {
-      if (route.name !== 'login' || route.name !== '') redirect('/login')
+      if (route.path !== '/' && route.path !== '/login' && route.path !== '/signup') {
+        return redirect('/login')
+      }
     }
   })
 }
