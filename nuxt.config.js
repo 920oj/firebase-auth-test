@@ -25,6 +25,9 @@ export default {
   */
   css: [
   ],
+  router: {
+    middleware: ['auth']
+  },
   /*
   ** Plugins to load before mounting the App
   */
