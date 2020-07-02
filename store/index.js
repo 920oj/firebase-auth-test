@@ -21,6 +21,6 @@ export const mutations = {
   },
   logout(state) {
     state.status = false;
-    state.email = '';
+    state.mail = '';
   }
 }
