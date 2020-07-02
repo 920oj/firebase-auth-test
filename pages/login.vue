@@ -55,7 +55,7 @@ export default {
         .signInWithEmailAndPassword(this.mail, this.password)
         .then(user => {
           console.log('ログインに成功しました。');
-          this.$store.commit('setUser', user);
+          this.$store.commit('logout');
           this.$router.push('/');
         })
         .catch(err => {
